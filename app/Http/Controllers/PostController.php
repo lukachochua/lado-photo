@@ -13,4 +13,11 @@ class PostController extends Controller
             'post' => Post::first(),
         ]);
     }
+
+    public function create()
+    {
+        return view('create', [
+            'post' => Post::first(),
+        ]);
+    }
 }
