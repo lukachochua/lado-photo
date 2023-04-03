@@ -2,7 +2,8 @@
     <div class="flex justify-center items-center h-screen">
         <div class="bg-white rounded-lg shadow-md p-8 w-96">
             <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
-            <form>
+            <form action="/sessions" method="POST">
+                @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 font-semibold mb-2" for="email">
                         Email
