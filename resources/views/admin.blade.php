@@ -1,21 +1,22 @@
 <x-layout>
+    @guest
+    <div class="flex flex-col items-center mt-32">
+        <div class="mb-8">
+            <h1 class="text-4xl text-center text-purple-500 hover:text-green-500 transform hover:scale-110 transition duration-300 ease-in-out font-bold">
+                Welcome, Admin!
+            </h1>
+        </div>
+        <div class="flex-grow">
+            <p class="text-4xl text-center text-purple-500 hover:text-green-500 transform hover:scale-110 transition duration-300 ease-in-out font-bold">
+                Log in to start uploading photos. If you got no account, please <a class="text-red-500"href="/register">Register</a>
+            </p>
+        </div>
+    </div>
+    @endguest
+
     @auth
     <div class="top-0 left-0 bg-green-600 text-white p-3 rounded flex items-center justify-center w-1/2 h-16 font-bold">
         <span class="text-center">Welcome Back {{ auth()->user()->name }}!</span>
-    </div>
-
-    @else
-    <div
-        class="bg-blue-600 rounded-xl w-32 text-center py-2 text-white font-semibold hover:font-bold hover:bg-blue-500 border hover:border-black">
-        <a href="/login">
-            Sign in
-        </a>
-    </div>
-    <div
-        class="bg-blue-600 rounded-xl w-32 text-center py-2 text-white font-semibold hover:font-bold hover:bg-blue-500 border hover:border-black">
-        <a href="/register">
-            Register
-        </a>
     </div>
     @endauth
 </x-layout>

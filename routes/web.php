@@ -21,8 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
+
 Route::get('/admin', [PostController::class, 'index']);
-Route::get('/admin/posts/create', [PostController::class, 'create']);
+Route::get('/admin/posts/create', [PostController::class, 'create'])->middleware('auth');
+Route::post('/admin/posts/create', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
+
+Route::get('/admin/gallery', [PostController::class, 'show']);
+
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');

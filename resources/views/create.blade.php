@@ -1,30 +1,34 @@
 <x-layout>
-    <div class="flex justify-center items-center h-screen">
-        <div class="bg-white rounded-lg shadow-md p-8 w-96">
-            <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
-            <form action="/sessions" method="POST">
+        <div class="bg-green-500 bg-opacity-40 shadow-lg py-8 px-4 rounded-lg w-1/2">
+            <form class="max-w-sm mx-auto" method="POST" action="{{ route('posts.store') }}"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
-                    <label class="block text-gray-700 font-semibold mb-2" for="email">
-                        Email
+                    <label class="block text-white font-bold mb-2" for="photo">
+                        Upload photo
                     </label>
-                    <input class="border border-gray-400 p-2 w-full rounded-lg" type="email" id="email" name="email"
-                        required />
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="photo" name="photo" value="{{ old('photo') }}" type="file" accept="image/*">
+    
+                    @error('photo')
+                    <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="mb-6">
-                    <label class="block text-gray-700 font-semibold mb-2" for="password">
-                        Password
+                    <label class="block text-white font-bold mb-2" for="description">
+                        Photo description
                     </label>
-                    <input class="border border-gray-400 p-2 w-full rounded-lg" type="password" id="password"
-                        name="password" required />
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="description" name="description" value="{{ old('description') }}" rows="3"></textarea>
+                    @error('description')
+                    <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
-                <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
-                    Sign In
-                </button>
-                <p class="text-gray-600 text-sm mt-4">
-                    Don't have an account? <a href="#" class="underline">Sign up here.</a>
-                </p>
+                <div class="flex items-center justify-center">
+                    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                        Upload
+                    </button>
+                </div>
             </form>
         </div>
-    </div>
 </x-layout>

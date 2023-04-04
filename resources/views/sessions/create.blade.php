@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex justify-center items-center h-screen">
+    <div class="flex justify-center items-center">
         <div class="bg-white rounded-lg shadow-md p-8 w-96">
             <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
             <form action="/login" method="POST">
