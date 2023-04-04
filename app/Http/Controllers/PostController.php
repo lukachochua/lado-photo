@@ -31,26 +31,37 @@ class PostController extends Controller
 
     public function store()
     {
-        
+
         $attributes = request()->validate([
             'photo' => 'required|image|max:2048',
             'description' => 'required|string|max:255',
         ]);
 
-        
-    
+
+
         $post = new Post;
-        
+
         // Save photo
         $photoPath = $attributes['photo']->store('public/images');
         $post->photo = Storage::url($photoPath);
-        
+
         // Save description
         $post->description = $attributes['description'];
 
-        
+
         $post->save();
-    
+
         return redirect('/admin/posts/create')->with('success', 'Post created successfully!');
+    }
+
+    public function destroy(Post $post)
+    {
+        // Delete photo
+        Storage::delete(str_replace('/storage', 'public', $post->photo));
+
+        // Delete post
+        $post->delete();
+
+        return redirect('/admin/gallery')->with('success', 'Post deleted successfully!');
     }
 }
