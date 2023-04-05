@@ -1,4 +1,4 @@
-<x-layout>
+<x-admin-layout>
     <div class="flex justify-center items-center">
         <div class="bg-white rounded-lg shadow-md p-8 w-96">
             <h1 class="text-2xl font-semibold mb-4">Register</h1>
@@ -45,5 +45,4 @@
             </form>
         </div>
     </div>
-
-</x-layout>
+</x--admin-layout>

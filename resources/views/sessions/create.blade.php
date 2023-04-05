@@ -1,4 +1,4 @@
-<x-layout>
+<x-admin-layout>
     <div class="flex justify-center items-center">
         <div class="bg-white rounded-lg shadow-md p-8 w-96">
             <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
@@ -9,9 +9,9 @@
                         Email
                     </label>
                     <input class="border border-gray-400 p-2 w-full rounded-lg" type="email" id="email" name="email"
-                       value="{{old('email')}}" required />
+                        value="{{old('email')}}" required />
                     @error('email')
-                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -22,7 +22,7 @@
                     <input class="border border-gray-400 p-2 w-full rounded-lg" type="password" id="password"
                         name="password" required />
                     @error('password')
-                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -35,4 +35,4 @@
             </form>
         </div>
     </div>
-</x-layout>
+</x-admin-layout>

@@ -2,59 +2,48 @@
 <html lang="en" class="h-full bg-gray-100">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="h-full">
-    <div class="min-h-full">
-        <nav class="bg-gray-800">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex items-center">
+<body>
+  <header class="bg-gray-900 text-gray-100">
+    <nav class="flex justify-between items-center py-4 px-6">
+      <div>
+        <a href="#" class="font-bold text-lg">Logo</a>
+      </div>
+      <div>
+        <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded" onmouseover="showCategories()"
+          onmouseout="hideCategories()">
+          Photos
+        </a>
 
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <div id="categories" class="hidden absolute bg-gray-800 text-gray-100 w-auto py-2 mt-1 rounded-md z-10"
+          onmouseover="showCategories()" onmouseout="hideCategories()">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Personal</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Food</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Other</a>
+        </div>
+        <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded">About</a>
+        <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded">Contact</a>
+      </div>
+    </nav>
 
-                                <a href="/admin" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Dashboard</a>
-                                @guest
-                                <a href="/login"
-                                    class="bg-green-500 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Log in</a>
-                                @endguest
-
-                                @auth
-                                <a href="/admin/posts/create"
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Create Post</a>
-                                <a href="/admin/gallery"
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Photo Gallery</a>
-                                <form action="/logout" method="POST"
-                                    class="bg-red-500 text-white rounded-md px-3 py-2 text-sm font-medium">
-                                    @csrf
-                                    <button>Log Out</button>
-                                </form>
-                            </div>
-                            @endauth
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <main>
-            <div class="mx-auto flex items-center justify-center max-w-7xl py-6 sm:px-6 lg:px-8">
-                {{ $slot }}
-            </div>
-        </main>
-    </div>
-    <x-flash />
+    {{ $slot }}
+  </header>
+    
+  <script>
+    function showCategories() {
+          document.getElementById("categories").style.display = "block";
+        }
+      
+        function hideCategories() {
+          document.getElementById("categories").style.display = "none";
+        }
+  </script>
 </body>
 
 </html>

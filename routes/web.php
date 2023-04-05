@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -17,18 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [PostController::class, 'index']);
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
 
-Route::get('/admin', [PostController::class, 'index']);
-Route::get('/admin/posts/create', [PostController::class, 'create'])->middleware('admin');
-Route::post('/admin/posts/create', [PostController::class, 'store'])->name('posts.store')->middleware('admin');
-Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
-
-
-Route::get('/admin/gallery', [PostController::class, 'show'])->middleware('auth');
+Route::get('/admin', [AdminPostController::class, 'index']);
+Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
+Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store')->middleware('admin');
+Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
+Route::get('/admin/gallery', [AdminPostController::class, 'show'])->middleware('admin');
 
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
