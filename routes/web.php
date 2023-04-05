@@ -23,12 +23,12 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 
 
 Route::get('/admin', [PostController::class, 'index']);
-Route::get('/admin/posts/create', [PostController::class, 'create'])->middleware('auth');
-Route::post('/admin/posts/create', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
-Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/admin/posts/create', [PostController::class, 'create'])->middleware('admin');
+Route::post('/admin/posts/create', [PostController::class, 'store'])->name('posts.store')->middleware('admin');
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
 
 
-Route::get('/admin/gallery', [PostController::class, 'show']);
+Route::get('/admin/gallery', [PostController::class, 'show'])->middleware('auth');
 
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');

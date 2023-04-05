@@ -56,10 +56,10 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        // Delete photo
+
         Storage::delete(str_replace('/storage', 'public', $post->photo));
 
-        // Delete post
+
         $post->delete();
 
         return redirect('/admin/gallery')->with('success', 'Post deleted successfully!');

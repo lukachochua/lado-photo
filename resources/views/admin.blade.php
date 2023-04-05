@@ -7,8 +7,8 @@
             </h1>
         </div>
         <div class="flex-grow">
-            <p class="text-4xl text-center text-purple-500 hover:text-green-500 transform hover:scale-110 transition duration-300 ease-in-out font-bold">
-                Log in to start uploading photos. If you got no account, please <a class="text-red-500"href="/register">Register</a>
+            <p class="text-2xl text-center text-purple-500 hover:text-green-500 transform hover:scale-110 transition duration-300 ease-in-out font-bold">
+                Log in to start uploading photos. If you got no account, please <a href="/register" class="text-red-300 hover:text-red-700">Register!</a>
             </p>
         </div>
     </div>
