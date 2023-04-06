@@ -1,4 +1,6 @@
-<x-admin-layout>
+<x-admin-layout :categories="$categories">
+
+    
     <div class="bg-green-500 bg-opacity-40 shadow-lg py-8 px-4 rounded-lg w-1/2">
         <form class="max-w-sm mx-auto" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf
@@ -11,6 +13,26 @@
                     id="photo" name="photo" value="{{ old('photo') }}" type="file" accept="image/*">
 
                 @error('photo')
+                <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="category">
+                    Choose Category
+                </label>
+                <select
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="category" name="category_id" value="{{ old('category') }}" type="file">
+                    
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name}}</option>
+                    @endforeach
+
+                </select>
+
+                
+
+                @error('category')
                 <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>

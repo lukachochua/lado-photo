@@ -22,9 +22,12 @@ class PostController extends Controller
     {
         $categories = Category::all();
 
+        $variables = $categories->all();
+
+
         return view('welcome', [
             'posts' => Post::all(),
-        ])->with('categories', $categories);
+        ])->with('categories', $categories)->with('variables', $variables);
     }
 
     public function show(Category $category)

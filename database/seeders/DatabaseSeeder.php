@@ -12,27 +12,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $categories = ['Personal', 'Food', 'Other'];
+        $categories = [
+            ['name' => 'Personal', 'id' => 1],
+            ['name' => 'Food', 'id' => 2],
+            ['name' => 'Other', 'id' => 3],
+        ];
 
         foreach ($categories as $category) {
-            Category::create([
-                'name' => $category,
-            ]);
+            Category::create($category);
         }
 
         $user = User::factory()->create([
             'name' => 'Luka',
             'email' => 'lukachochua@gmail.com',
-            'password' => 'password'
+            'password' => 'password',
         ]);
 
         \App\Models\Post::factory(10)
             ->create(['user_id' => $user->id])
             ->each(function ($post) use ($categories) {
-                $category = Category::where('name', $categories[array_rand($categories)])->first();
+                $category = Category::where('name', $categories[array_rand($categories)]['name'])->first();
                 $post->category_id = $category->id;
                 $post->save();
             });
     }
 }
-

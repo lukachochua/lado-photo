@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class AdminPostController extends Controller
 {
@@ -17,8 +20,11 @@ class AdminPostController extends Controller
 
     public function create()
     {
+        $categories = Category::all();
+
         return view('admin.create', [
             'post' => Post::first(),
+            'categories' => $categories
         ]);
     }
 
@@ -31,16 +37,21 @@ class AdminPostController extends Controller
 
     public function store()
     {
+        
         $attributes = request()->validate([
             'photo' => 'required|image|max:2048',
             'description' => 'required|string|max:255',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
+    
 
-        $post = new Post;
-
+        $post = new Post();
+        
         $path = $attributes['photo']->store('public/images');
         $post->photo = basename($path);
+        $post->user_id = auth()->user()->id;
         $post->description = $attributes['description'];
+        $post->category_id = $attributes['category_id'];
 
         $post->save();
 

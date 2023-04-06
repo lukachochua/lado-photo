@@ -6,6 +6,8 @@
                     <img src="{{ asset("storage/images/{$post->photo}") }}" alt="Your Image" class="w-full">
                 </div>
             @endforeach
+
+
         </div>
     </div>
 </x-layout>
