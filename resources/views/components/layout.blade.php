@@ -15,7 +15,7 @@
   <header class="bg-gray-900 text-gray-100">
     <nav class="flex justify-between items-center py-4 px-6">
       <div>
-        <a href="#" class="font-bold text-lg">Logo</a>
+        <a href="/" class="font-bold text-lg">Home</a>
       </div>
       <div>
         <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded" onmouseover="showCategories()"
@@ -25,9 +25,10 @@
 
         <div id="categories" class="hidden absolute bg-gray-800 text-gray-100 w-auto py-2 mt-1 rounded-md z-10"
           onmouseover="showCategories()" onmouseout="hideCategories()">
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Personal</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Food</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-700">Other</a>
+          @foreach ($categories as $category)
+            <a href="{{ route('categories.show', ['category' => $category->id]) }}"
+              class="block px-4 py-2 hover:bg-gray-700">{{ $category->name }} </a>
+          @endforeach
         </div>
         <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded">About</a>
         <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded">Contact</a>
