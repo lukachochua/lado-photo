@@ -34,7 +34,6 @@
         <a href="#" class="py-2 px-4 text-gray-100 hover:bg-gray-700 rounded">Contact</a>
       </div>
     </nav>
-
     {{ $slot }}
   </header>
 

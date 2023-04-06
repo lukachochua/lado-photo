@@ -10,25 +10,30 @@ use Illuminate\Support\Facades\View;
 
 class PostController extends Controller
 {
-    public function __construct(Category $category)
-    {
-        $categories = Category::all();
-        View::share('categories', $categories);
+    // public function __construct(Category $category)
+    // {
+    //     $categories = Category::all();
+    //     View::share('categories', $categories);
 
-        View::share('category', $category); // ??
-    }
+    //     View::share('category', $category); // ??
+    // }
 
     public function index()
     {
+        $categories = Category::all();
+
         return view('welcome', [
             'posts' => Post::all(),
-        ]);
+        ])->with('categories', $categories);
     }
 
     public function show(Category $category)
     {
+        $categories = Category::all();
+
         return view('category', [
-            'posts' => $category->posts
+            'posts' => $category->posts,
+            'categories' => $categories
         ]);
     }
 }
