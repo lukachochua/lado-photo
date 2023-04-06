@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <script src="{{ asset('js/script.js') }}"></script>
+
 </head>
 
 <body>
@@ -34,16 +36,7 @@
 
     {{ $slot }}
   </header>
-    
-  <script>
-    function showCategories() {
-          document.getElementById("categories").style.display = "block";
-        }
-      
-        function hideCategories() {
-          document.getElementById("categories").style.display = "none";
-        }
-  </script>
+
 </body>
 
 </html>
