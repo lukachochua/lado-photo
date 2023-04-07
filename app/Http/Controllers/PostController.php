@@ -26,7 +26,7 @@ class PostController extends Controller
 
 
         return view('welcome', [
-            'posts' => Post::all(),
+            'posts' => Post::orderBy('created_at', 'desc')->get()
         ])->with('categories', $categories)->with('variables', $variables);
     }
 

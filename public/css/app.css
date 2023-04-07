@@ -532,6 +532,14 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.-mx-1 {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -576,6 +584,9 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.max-h-full {
+  max-height: 100%;
 }
 .min-h-full {
   min-height: 100%;
@@ -629,6 +640,9 @@ video {
 }
 .items-baseline {
   align-items: baseline;
+}
+.items-stretch {
+  align-items: stretch;
 }
 .justify-center {
   justify-content: center;
@@ -704,6 +718,14 @@ video {
 }
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
+}
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-2 {
   padding: 0.5rem;
