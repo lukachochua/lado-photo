@@ -24,3 +24,10 @@ document.addEventListener('click', function (event) {
     popup.style.display = "none";
   }
 });
+
+document.addEventListener('keydown', function (event) {
+  var popup = document.getElementById("popup");
+  if (event.key === "Escape" && popup.style.display === "flex") {
+    popup.style.display = "none";
+  }
+});

@@ -58,6 +58,28 @@ class AdminPostController extends Controller
         return redirect('/admin/posts/create')->with('success', 'Post created successfully!');
     }
 
+    public function edit(Post $post)
+    {
+        $categories = Category::all();
+
+        return view('admin.edit', [
+            'post' => $post,
+            'categories' => $categories
+        ]);
+    }
+
+    public function update(Post $post)
+    {
+        $attributes = request()->validate([
+            'description' => 'required|string|max:255',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+        $post->update($attributes);
+
+        return back()->with('success', 'Post Updated!');
+    }
+
     public function destroy(Post $post)
     {
 

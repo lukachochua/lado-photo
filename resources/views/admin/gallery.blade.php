@@ -12,6 +12,12 @@
                         Delete
                     </button>
                 </form>
+
+                <a href="{{ route('posts.edit', $post) }}" class="inline-block">
+                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                        UPDATE
+                    </button>
+                </a>
             </div>
             @endforeach
         </div>

@@ -32,6 +32,12 @@ Route::get('/admin', [AdminPostController::class, 'index']);
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
 Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store')->middleware('admin');
 Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
+Route::get('/posts/{post}/edit', [AdminPostController::class, 'edit'])->name('posts.edit')->middleware('admin');
+Route::patch('/posts/{post}', [AdminPostController::class, 'update'])->name('posts.update')->middleware('admin');
+
+
+
+
 Route::get('/admin/gallery', [AdminPostController::class, 'show'])->middleware('admin');
 
 
