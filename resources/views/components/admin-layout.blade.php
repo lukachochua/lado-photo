@@ -20,23 +20,23 @@
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
-                                <a href="/admin" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Dashboard</a>
+                                <a href="/admin"
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Dashboard</a>
                                 @guest
                                 <a href="/login"
-                                    class="bg-green-500 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Log in</a>
+                                    class="px-3 py-2 text-sm font-medium text-green-500 rounded-md hover:bg-green-500 hover:text-white">Log
+                                    in</a>
                                 @endguest
 
                                 @auth
                                 <a href="/admin/posts/create"
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Create Post</a>
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Create
+                                    Post</a>
                                 <a href="/admin/gallery"
-                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Photo Gallery</a>
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Photo
+                                    Gallery</a>
                                 <form action="/logout" method="POST"
-                                    class="bg-red-500 text-white rounded-md px-3 py-2 text-sm font-medium">
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-red-700">
                                     @csrf
                                     <button>Log Out</button>
                                 </form>
