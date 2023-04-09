@@ -7,6 +7,5 @@
         </div>
     </div>
     @endforeach
-
     <x-popup />
 </x-layout>

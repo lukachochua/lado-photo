@@ -27,19 +27,13 @@ Route::get('categories/{category:id}', [PostController::class, 'show'])->name('c
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
-
 Route::get('/admin', [AdminPostController::class, 'index']);
-Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
+Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('post.create')->middleware('admin');
 Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store')->middleware('admin');
 Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
 Route::get('/posts/{post}/edit', [AdminPostController::class, 'edit'])->name('posts.edit')->middleware('admin');
 Route::patch('/posts/{post}', [AdminPostController::class, 'update'])->name('posts.update')->middleware('admin');
-
-
-
-
-Route::get('/admin/gallery', [AdminPostController::class, 'show'])->middleware('admin');
-
+Route::get('/admin/gallery', [AdminPostController::class, 'show'])->name('gallery')->middleware('admin');
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');

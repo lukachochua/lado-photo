@@ -12,26 +12,25 @@
 
 <body class="bg-gray-100">
   <header class="bg-gray-500 text-white">
-    <nav class="flex justify-between items-center py-4 px-6">
+    <nav class="flex justify-between items-center py-4 px-6 font-sans">
       <div>
-        <a href="/" class="font-extrabold text-lg hover:bg-gray-700 px-4 py-2 rounded">Home</a>
+        <a href="/" class="py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative transition duration-400 ease-in-out text-lg">HOME</a>
       </div>
-      <div>
-        <a href="#" class="py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative"
+      <div >
+        <a href="/" class="py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative transition duration-400 ease-in-out text-lg"
           onmouseover="showCategories()" onmouseout="hideCategories()">
-          Photos
+          PHOTOS
         </a>
         <div id="categories" class="hidden absolute bg-gray-500 text-white w-auto py-2 mt-1 rounded-md z-10"
           onmouseover="showCategories()" onmouseout="hideCategories()">
           @foreach ($categories as $category)
-          <a href="{{ route('categories.show', ['category' => $category->id]) }}" class="block px-4 py-2 text-gray-300 hover:bg-gray-600 hover:text-white font-bold focus:bg-gray-700
-            focus:text-white rounded-md transition-colors duration-300">
-            {{ $category->name }}
+          <a href="{{ route('categories.show', ['category' => $category->id]) }}" class="block py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative transition duration-400 ease-in-out text-lg">
+            {{ strtoupper($category->name) }}
           </a>
           @endforeach
         </div>
-        <a href="#" class="py-2 px-4 text-white font-bold hover:bg-gray-700 rounded-lg">About</a>
-        <a href="#" class="py-2 px-4 text-white font-bold hover:bg-gray-700 rounded-lg">Contact</a>
+        <a href="#" class="py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative transition duration-400 ease-in-out text-lg">ABOUT</a>
+        <a href="#" class="py-2 px-4 text-white font-bold hover:bg-gray-600 rounded-lg relative transition duration-400 ease-in-out text-lg">CONTACT</a>
       </div>
     </nav>
 
@@ -43,6 +42,11 @@
       </div>
     </main>
   </header>
+
+  <footer class="flex justify-between items-center bg-gray-500 text-white py-4 px-6">
+    <div class="text-sm">Built by &copy;Luka Chochua</div>
+    <div class="text-sm">Owned by &copy;Lado Kobakhidze</div>
+  </footer>
 </body>
 
 </html>
