@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\View;
 */
 
 Route::get('/', [PostController::class, 'index']);
-
 Route::get('categories/{category:id}', [PostController::class, 'show'])->name('categories.show');
+Route::get('videos', [PostController::class, 'video'])->name('videos');
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');

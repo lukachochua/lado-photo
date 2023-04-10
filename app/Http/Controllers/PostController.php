@@ -39,4 +39,13 @@ class PostController extends Controller
             'categories' => $categories
         ]);
     }
+
+    public function video()
+    {
+        $categories = Category::all();
+
+        return view('videos', [
+            'categories' => $categories
+        ]);
+    }
 }
