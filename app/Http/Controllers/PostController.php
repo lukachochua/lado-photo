@@ -22,12 +22,10 @@ class PostController extends Controller
     {
         $categories = Category::all();
 
-        $variables = $categories->all();
-
 
         return view('welcome', [
             'posts' => Post::orderBy('created_at', 'desc')->get()
-        ])->with('categories', $categories)->with('variables', $variables);
+        ])->with('categories', $categories);
     }
 
     public function show(Category $category)

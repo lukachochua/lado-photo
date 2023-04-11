@@ -37,15 +37,10 @@ class AdminPostController extends Controller
 
     public function store()
     {
-        
-        $attributes = request()->validate([
-            'photo' => 'required|image|max:2048',
-            'description' => 'required|string|max:255',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
-    
-
         $post = new Post();
+        
+        $attributes = $this->validatePost();
+            
         
         $path = $attributes['photo']->store('public/images');
         $post->photo = basename($path);
@@ -70,10 +65,7 @@ class AdminPostController extends Controller
 
     public function update(Post $post)
     {
-        $attributes = request()->validate([
-            'description' => 'required|string|max:255',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
+        $attributes = $this->validatePost($post);
 
         $post->update($attributes);
 
@@ -82,11 +74,21 @@ class AdminPostController extends Controller
 
     public function destroy(Post $post)
     {
-
         Storage::delete(str_replace('/storage', 'public', $post->photo));
 
         $post->delete();
 
         return redirect('/admin/gallery')->with('success', 'Post deleted successfully!');
+    }
+
+    protected function validatePost(?Post $post=null)
+    {
+        $post ??= new Post;
+
+        return  request()->validate([
+            'photo' => $post->exists ? ['image'] : 'required|image',
+            'description' => 'required|string|max:255',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
     }
 }
