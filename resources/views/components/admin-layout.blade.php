@@ -18,8 +18,6 @@
 
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
                                 <a href="/admin"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Dashboard</a>
                                 @guest
