@@ -26,6 +26,7 @@ if (window.innerWidth >= 768) {
       popup.style.display = "none";
     }
   });
+
   document.addEventListener('keydown', function (event) {
     var popup = document.getElementById("popup");
     if (event.key === "Escape" && popup.style.display === "flex") {
@@ -34,14 +35,20 @@ if (window.innerWidth >= 768) {
   });
 }
 
-if (window.innerWidth <= 768) {
-  function showCategories() {
-    document.getElementById("categories").style.display = "block";
-  }
+if (window.innerWidth <= 640) {
+  document.addEventListener("DOMContentLoaded", function () {
 
-  function hideCategories() {
-    document.getElementById("categories").style.display = "none";
-  }
+    var nav = document.getElementById("small-nav");
+    var navBar = document.getElementById("navbar-sm");
+
+    document.addEventListener('click', function (event) {
+      if (event.target == nav) {
+        navBar.style.display = "inline";
+      } else if (event.target != nav) {
+        navBar.style.display = "none";
+      } 
+    });
+  });
 }
 
 

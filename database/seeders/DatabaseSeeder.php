@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'Personal', 'id' => 1],
-            ['name' => 'Food', 'id' => 2],
-            ['name' => 'Other', 'id' => 3],
+            ['name' => 'Personal', 'id' => 1, 'slug' => 'personal'],
+            ['name' => 'Food', 'id' => 2, 'slug' => 'food'],
+            ['name' => 'Other', 'id' => 3, 'slug' => 'other'],
         ];
 
         foreach ($categories as $category) {
