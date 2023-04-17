@@ -36,19 +36,21 @@ if (window.innerWidth >= 768) {
 }
 
 if (window.innerWidth <= 640) {
-  document.addEventListener("DOMContentLoaded", function () {
+  function clicked() {
+    
+    var navbar = document.getElementById('navbar-sm');
+    var dropdown = document.getElementById('dropdown');
 
-    var nav = document.getElementById("small-nav");
-    var navBar = document.getElementById("navbar-sm");
+    navbar.classList.toggle('hidden');
 
-    document.addEventListener('click', function (event) {
-      if (event.target == nav) {
-        navBar.style.display = "inline";
-      } else if (event.target != nav) {
-        navBar.style.display = "none";
-      } 
+    document.addEventListener('click', function(e){
+      if(!dropdown.contains(e.target)) {
+        navbar.classList.add('hidden');
+      }
     });
-  });
+  }
+
+  
 }
 
 
