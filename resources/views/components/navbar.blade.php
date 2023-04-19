@@ -14,7 +14,7 @@
             </button>
         </div>
 
-        <x-dropdown />
+        <x-dropdown :categories="$categories" />
     </div>
 
     <div class="sm:relative inset-0 hidden sm:inline">

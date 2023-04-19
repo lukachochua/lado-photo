@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'password' => 'password',
         ]);
 
-        \App\Models\Post::factory(10)
+        \App\Models\Post::factory(30)
             ->create(['user_id' => $user->id])
             ->each(function ($post) use ($categories) {
                 $category = Category::where('name', $categories[array_rand($categories)]['name'])->first();

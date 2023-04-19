@@ -37,20 +37,25 @@ if (window.innerWidth >= 768) {
 
 if (window.innerWidth <= 640) {
   function clicked() {
-    
     var navbar = document.getElementById('navbar-sm');
     var dropdown = document.getElementById('dropdown');
 
     navbar.classList.toggle('hidden');
 
-    document.addEventListener('click', function(e){
-      if(!dropdown.contains(e.target)) {
+    document.addEventListener('click', function (event) {
+      if (!dropdown.contains(event.target)) {
         navbar.classList.add('hidden');
       }
     });
   }
 
-  
+  function showCategories() {
+    document.getElementById("categories").style.display = "block";
+  }
+
+  function hideCategories() {
+    document.getElementById("categories").style.display = "none";
+  }
 }
 
 
