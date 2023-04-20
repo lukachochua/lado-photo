@@ -1,4 +1,4 @@
-<nav class="flex justify-between items-center py-4 px-6 font-sans" >
+<nav class="flex justify-between items-center py-4 px-6 font-sans">
     <div>
         <a href="/"
             class="hidden sm:inline py-2 px-4 text-white font-bold hover:text-gray-500 hover:border-t-2 border-gray-500 relative transition duration-400 ease-in-out text-lg">HOME</a>

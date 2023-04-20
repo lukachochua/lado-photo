@@ -50,11 +50,11 @@ if (window.innerWidth <= 640) {
   }
 
   function showCategories() {
-    document.getElementById("categories").style.display = "block";
+    document.getElementById("categories-sm").style.display = "block";
   }
 
   function hideCategories() {
-    document.getElementById("categories").style.display = "none";
+    document.getElementById("categories-sm").style.display = "none";
   }
 }
 
