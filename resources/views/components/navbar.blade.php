@@ -21,11 +21,11 @@
     </div>
 
     <div class="sm:relative inset-0 hidden sm:inline">
-        <x-button href="/" onmouseover="showCategories()" onmouseout="hideCategories()" class="font-custom">
+        <x-button href="/" onmouseover="showCategories()" onmouseout="hideCategories()">
             Photos
         </x-button>
 
-        <div id="categories" class="font-custom hidden absolute bg-gray-800 text-white w-auto py-2 mt-1 z-10"
+        <div id="categories" class="hidden absolute bg-gray-800 text-white w-auto py-2 mt-1 z-10"
             onmouseover="showCategories()" onmouseout="hideCategories()">
             @foreach ($categories as $category)
             <x-button href="{{ route('categories.show', ['category' => $category->slug]) }}"
@@ -35,8 +35,8 @@
             @endforeach
         </div>
 
-        <x-button href="{{ route('videos') }}" class="font-custom">Videos</x-button>
-        <x-button href="#" class="font-custom">About</x-button>
-        <x-button href="#" class="font-custom">Contact us</x-button>
+        <x-button href="{{ route('videos') }}">Videos</x-button>
+        <x-button href="#">About</x-button>
+        <x-button href="#">Contact</x-button>
     </div>
 </nav>
