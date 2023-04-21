@@ -51,7 +51,11 @@ if (window.innerWidth <= 640) {
       }
     });
   }
-
+  
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById('touch-start').addEventListener("touchstart", showCategories, {passive:true});
+    document.getElementById('touch-start').addEventListener("touchstart", hideCategories, {passive:true});
+  });
 }
 
 

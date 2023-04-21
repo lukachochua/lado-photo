@@ -1,7 +1,7 @@
 <div id="navbar-sm" class="absolute hidden z-50">
     <div class="rounded w-28 bg-gray-800">
         <div onmouseover="showCategories()" onmouseout="hideCategories()" class="relative">
-            <x-button href="/" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
+            <x-button id="touch-start" href="#" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
                 PHOTOS
             </x-button>
 
@@ -14,7 +14,8 @@
                 @endforeach
             </div>
         </div>
-        <div>
+        
+        <div> 
             <x-button href="{{ route('videos') }}" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
                 VIDEOS
             </x-button>
