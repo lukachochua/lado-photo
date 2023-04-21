@@ -15,7 +15,7 @@
             </div>
         </div>
         <div>
-            <x-button href="videos" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
+            <x-button href="{{ route('videos') }}" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
                 VIDEOS
             </x-button>
         </div>
