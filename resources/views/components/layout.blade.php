@@ -17,12 +17,11 @@
 
     <main>
       <div class="bg-gray-200 min-h-screen pt-10 pb-6 overflow-hidden">
-        <div class="max-w-screen-lg mx-auto grid gap-4 grid-cols-1 sm:grid-cols-3">
+        <div class="max-w-screen-lg mx-auto grid gap-4 grid-cols-1 sm:grid-cols-3 ">
           {{ $slot }}
         </div>
       </div>
     </main>
-    
   </header>
 
   <x-footer />

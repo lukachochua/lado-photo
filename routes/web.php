@@ -21,19 +21,25 @@ use Illuminate\Support\Facades\View;
 */
 
 Route::get('/', [PostController::class, 'index']);
-Route::get('categories/{category:slug}', [PostController::class, 'show'])->name('categories.show');
-Route::get('videos', [PostController::class, 'video'])->name('videos');
+Route::get('/categories/{category:slug}', [PostController::class, 'show'])->name('categories.show');
+Route::get('/videos', [PostController::class, 'video'])->name('videos');
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
 Route::get('/admin', [AdminPostController::class, 'index']);
-Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('post.create')->middleware('admin');
-Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store')->middleware('admin');
-Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy')->middleware('admin');
-Route::get('/posts/{post}/edit', [AdminPostController::class, 'edit'])->name('posts.edit')->middleware('admin');
-Route::patch('/posts/{post}', [AdminPostController::class, 'update'])->name('posts.update')->middleware('admin');
-Route::get('/admin/gallery', [AdminPostController::class, 'show'])->name('gallery')->middleware('admin');
+
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('post.create');
+    Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store');
+    Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy');
+    Route::get('/posts/{post}/edit', [AdminPostController::class, 'edit'])->name('posts.edit');
+    Route::patch('/posts/{post}', [AdminPostController::class, 'update'])->name('posts.update');
+    Route::get('/admin/gallery', [AdminPostController::class, 'show'])->name('gallery');
+});
+
+
+
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');

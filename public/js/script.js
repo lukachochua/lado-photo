@@ -1,12 +1,15 @@
+function showCategories() {
+  document.getElementById("categories").style.display = "block";
+  document.getElementById("categories-sm").style.display = "block";
+
+}
+
+function hideCategories() {
+  document.getElementById("categories").style.display = "none";
+  document.getElementById("categories-sm").style.display = "none";
+}
+
 if (window.innerWidth >= 768) {
-  function showCategories() {
-    document.getElementById("categories").style.display = "block";
-  }
-
-  function hideCategories() {
-    document.getElementById("categories").style.display = "none";
-  }
-
   function showPopup(imageUrl) {
     var popup = document.getElementById("popup");
     var popupImage = document.getElementById("popup-image");
@@ -49,13 +52,6 @@ if (window.innerWidth <= 640) {
     });
   }
 
-  function showCategories() {
-    document.getElementById("categories-sm").style.display = "block";
-  }
-
-  function hideCategories() {
-    document.getElementById("categories-sm").style.display = "none";
-  }
 }
 
 

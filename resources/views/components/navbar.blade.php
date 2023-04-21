@@ -32,7 +32,7 @@
             @endforeach
         </div>
 
-        <x-button href="videos">VIDEOS</x-button>
+        <x-button href="{{ route('videos') }}">VIDEOS</x-button>
         <x-button href="#">ABOUT</x-button>
         <x-button href="#">CONTACT</x-button>
     </div>
