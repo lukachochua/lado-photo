@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script src="{{ asset('js/script.js') }}"></script>
+  <script src="{{ asset('js/slideshow.js')}}"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -20,9 +21,9 @@
 
     <main>
       <div class="bg-gray-200 min-h-screen pt-10 pb-6 overflow-hidden">
-        <div class="max-w-screen-lg mx-auto grid gap-4 grid-cols-1 sm:grid-cols-3 ">
-          {{ $slot }}
-        </div>
+
+        {{ $slot }}
+
       </div>
     </main>
   </header>

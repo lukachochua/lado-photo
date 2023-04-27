@@ -4,26 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\View;
 
 class PostController extends Controller
 {
-    // public function __construct(Category $category)
-    // {
-    //     $categories = Category::all();
-    //     View::share('categories', $categories);
-
-    //     View::share('category', $category); // ??
-    // }
-
     public function index()
     {
         $categories = Category::all();
-
+        $posts = Post::inRandomOrder()->limit(10)->first();
 
         return view('welcome', [
+            'categories' => $categories,
+            'posts' => $posts
+        ]);
+    }
+
+    public function photos()
+    {
+        $categories = Category::all();
+
+        return view('photos', [
             'posts' => Post::orderBy('created_at', 'desc')->get()
         ])->with('categories', $categories);
     }

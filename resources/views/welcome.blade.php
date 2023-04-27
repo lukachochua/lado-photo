@@ -1,9 +1,12 @@
 <x-layout :categories="$categories">
-    @foreach ($posts as $post)
+    <div class="flex justify-center items-center h-screen">
         <x-photos>
-                <img src="{{ asset("storage/images/{$post->photo}") }}" alt="Your Image" class="w-full h-full object-cover hover:scale-105 transition duration-300 ease-in"
-                onclick="showPopup('{{ asset("storage/images/{$post->photo}") }}')">
+            <div id="slideshow">
+                <img src="{{ asset("storage/images/{$posts->photo}") }}" alt="" class="w-full h-full object-cover
+                hover:scale-105 transition duration-300 ease-in"
+                onclick="showPopup('{{ asset("storage/images/{$posts->photo}") }}')">
+            </div>
         </x-photos>
-    @endforeach
-    <x-popup />
+        <x-popup />
+    </div>
 </x-layout>

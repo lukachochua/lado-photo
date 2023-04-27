@@ -21,7 +21,7 @@
     </div>
 
     <div class="sm:relative inset-0 hidden sm:inline">
-        <x-button href="/" onmouseover="showCategories()" onmouseout="hideCategories()">
+        <x-button href="/photos" onmouseover="showCategories()" onmouseout="hideCategories()">
             Photos
         </x-button>
 
