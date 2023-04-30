@@ -1,4 +1,4 @@
-<footer class="flex justify-between items-center bg-gray-800 text-white py-4 px-6">
+<footer class="flex justify-between items-center bg-black text-white py-4 px-6">
     <div class="text-sm">Built by &copy;Luka Chochua</div>
     <div class="text-sm">Owned by &copy;Lado Kobakhidze</div>
 </footer>

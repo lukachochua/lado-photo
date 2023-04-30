@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/photos', [PostController::class, 'photos'])->name('photos');
 Route::get('/categories/{category:slug}', [PostController::class, 'show'])->name('categories.show');
-Route::get('/videos', [PostController::class, 'video'])->name('videos');
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');

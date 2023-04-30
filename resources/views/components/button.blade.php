@@ -2,8 +2,8 @@
 
 @php
 
-$classes = 'font-custom py-2 px-4 text-white font-bold hover:text-gray-600 relative transition duration-400 ease-in-out text-lg
-hover:border-t-2 border-gray-500';
+$classes = 'font-custom py-2 px-4 text-white font-bold hover:text-white relative transition duration-400 ease-in-out text-lg
+hover:border-t-2 border-white';
 
 if ($withoutClasses) {
     foreach ($withoutClasses as $class) {

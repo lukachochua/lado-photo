@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $posts = Post::inRandomOrder()->limit(10)->first();
-        return view('welcome', [
+        return view('about', [
             'categories' => $categories,
             'posts' => $posts
         ]);
