@@ -18,10 +18,10 @@
 
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="/admin"
+                                <a href="{{ route('admin')}}"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Dashboard</a>
                                 @guest
-                                <a href="/login"
+                                <a href="{{ route('login')}}"
                                     class="px-3 py-2 text-sm font-medium text-green-500 rounded-md hover:bg-green-500 hover:text-white">Log
                                     in</a>
                                 @endguest
@@ -34,7 +34,7 @@
                                 <a href="/admin/posts/gallery"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Photo
                                     Gallery</a>
-                                <form action="/logout" method="POST"
+                                <form action="{{ route('logout')}}" method="POST"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-red-700">
                                     @csrf
                                     <button>Log Out</button>

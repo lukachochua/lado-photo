@@ -7,7 +7,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('/photos', [PostController::class, 'photos'])->name('photos');
 Route::get('/categories/{category:slug}', [PostController::class, 'show'])->name('categories.show');
 Route::get('/videos', [PostController::class, 'video'])->name('videos');
@@ -15,13 +15,13 @@ Route::get('/videos', [PostController::class, 'video'])->name('videos');
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get('/admin', [AdminPostController::class, 'index']);
+Route::get('/admin', [AdminPostController::class, 'index'])->name('admin');
 
 Route::middleware('admin')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('index');
 });
 
 
-Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
-Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
+Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
