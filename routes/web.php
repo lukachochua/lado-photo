@@ -18,12 +18,7 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 Route::get('/admin', [AdminPostController::class, 'index']);
 
 Route::middleware('admin')->group(function () {
-    Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('post.create');
-    Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('posts.store');
-    Route::delete('/posts/{post}', [AdminPostController::class, 'destroy'])->name('posts.destroy');
-    Route::get('/posts/{post}/edit', [AdminPostController::class, 'edit'])->name('posts.edit');
-    Route::patch('/posts/{post}', [AdminPostController::class, 'update'])->name('posts.update');
-    Route::get('/admin/gallery', [AdminPostController::class, 'show'])->name('gallery');
+    Route::resource('admin/posts', AdminPostController::class)->except('index');
 });
 
 

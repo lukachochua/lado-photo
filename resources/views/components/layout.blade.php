@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script src="{{ asset('js/script.js') }}"></script>
-  <script src="{{ asset('js/slideshow.js')}}"></script>
 </head>
 
 <body class="bg-gray-100">

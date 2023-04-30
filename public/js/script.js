@@ -36,6 +36,8 @@ if (window.innerWidth >= 768) {
       popup.style.display = "none";
     }
   });
+
+
 }
 
 if (window.innerWidth <= 640) {
@@ -51,10 +53,10 @@ if (window.innerWidth <= 640) {
       }
     });
   }
-  
-  document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById('touch-start').addEventListener("touchstart", showCategories, {passive:true});
-    document.getElementById('touch-start').addEventListener("touchstart", hideCategories, {passive:true});
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+    document.getElementById('touch-start').addEventListener("touchstart", showCategories, { passive: true });
+    document.getElementById('touch-start').addEventListener("touchstart", hideCategories, { passive: true });
   });
 }
 

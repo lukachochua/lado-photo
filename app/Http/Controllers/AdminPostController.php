@@ -31,7 +31,7 @@ class AdminPostController extends Controller
     public function show()
     {
         return view('admin.gallery', [
-            'posts' => Post::all(),
+            'posts' => Post::all()
         ]);
     }
 

@@ -27,10 +27,11 @@
                                 @endguest
 
                                 @auth
-                                <a href="/admin/posts/create"
+                                <a href="{{ route('posts.create')}}"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Create
                                     Post</a>
-                                <a href="/admin/gallery"
+                                    
+                                <a href="/admin/posts/gallery"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Photo
                                     Gallery</a>
                                 <form action="/logout" method="POST"
