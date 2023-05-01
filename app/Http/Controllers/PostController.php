@@ -10,10 +10,13 @@ class PostController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $posts = Post::inRandomOrder()->limit(10)->first();
+        $posts = Post::inRandomOrder()->limit(3)->get();
+        $images = scandir(public_path('storage/images'));
+
         return view('about', [
             'categories' => $categories,
-            'posts' => $posts
+            'posts' => $posts,
+            'images' => $images
         ]);
     }
 

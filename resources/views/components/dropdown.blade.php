@@ -1,7 +1,7 @@
 <div id="navbar-sm" class="absolute hidden z-50">
     <div class="rounded w-44 bg-black">
         <div onmouseover="showCategories()" onmouseout="hideCategories()" class="relative">
-            <x-button id="touch-start" href="/" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
+            <x-button id="touch-start" href="{{ route('portfolio')}}" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
                 Photos
             </x-button>
 
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div>
-            <x-button href="" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
+            <x-button href="/" class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
                 About
             </x-button>
         </div>

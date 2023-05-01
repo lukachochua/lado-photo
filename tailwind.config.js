@@ -8,9 +8,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'custom': ['Merriweather', 'sans-serif'],
-      }
+        'custom': ['Helvetica Neue Regular', 'sans-serif'],
+      },
+
+      height: {
+        '200': '50vh',
+      },
     },
   },
+  
   plugins: [],
 }

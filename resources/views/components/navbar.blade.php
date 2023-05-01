@@ -18,7 +18,7 @@
     </div>
 
     <div class="sm:relative inset-0 hidden sm:inline">
-        <x-button href="{{ route('photos') }}" onmouseover="showCategories()" onmouseout="hideCategories()">
+        <x-button href="{{ route('portfolio') }}" onmouseover="showCategories()" onmouseout="hideCategories()">
             Portfolio
         </x-button>
 
@@ -31,6 +31,6 @@
             </x-button>
             @endforeach
         </div>
-        <x-button href="#">About</x-button>
+        <x-button href="/">About</x-button>
     </div>
 </nav>

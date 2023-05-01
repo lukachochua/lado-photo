@@ -9,12 +9,12 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link href="{{ asset('css/fonts.css') }}" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <script src="{{ asset('js/script.js') }}"></script>
   <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ mix('js/app.js') }}"></script>
-
+  <script type="module" src={{ asset('js/slideshow.js')}}></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body class="bg-gray-100">
@@ -23,7 +23,7 @@
     <x-navbar :categories="$categories" />
 
     <main>
-      <div class="bg-white min-h-screen pt-10 pb-6 overflow-hidden">
+      <div class="bg-white min-h-screen pt-10 pb-6 overflow-hidden font-custom">
 
         {{ $slot }}
 
@@ -32,6 +32,7 @@
   </header>
 
   <x-footer />
+  
 </body>
 
 </html>
