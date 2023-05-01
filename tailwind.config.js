@@ -12,7 +12,7 @@ module.exports = {
       },
 
       height: {
-        '200': '50vh',
+        '200': '60vh',
       },
     },
   },
