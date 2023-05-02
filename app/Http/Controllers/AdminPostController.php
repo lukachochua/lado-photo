@@ -69,7 +69,7 @@ class AdminPostController extends Controller
 
         $post->update($attributes);
 
-        return redirect(route('gallery'))->with('success', 'Post Updated!');
+        return redirect(route('posts.show', $post))->with('success', 'Post Updated!');
     }
 
     public function destroy(Post $post)
@@ -78,7 +78,7 @@ class AdminPostController extends Controller
 
         $post->delete();
 
-        return redirect('/admin/gallery')->with('success', 'Post deleted successfully!');
+        return redirect(route('posts.show', $post))->with('success', 'Post deleted successfully!');
     }
 
     protected function validatePost(?Post $post=null)

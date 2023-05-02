@@ -578,6 +578,9 @@ video {
 .ml-10 {
   margin-left: 2.5rem;
 }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -631,6 +634,12 @@ video {
 }
 .w-1\/2 {
   width: 50%;
+}
+.w-100 {
+  width: 50vh;
+}
+.w-200 {
+  width: 101vh;
 }
 .w-28 {
   width: 7rem;
@@ -795,17 +804,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 .p-2 {
   padding: 0.5rem;
