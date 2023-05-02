@@ -6,31 +6,10 @@
         </a>
     </div>
 
-    <div class="sm:hidden absolute top-1 left-1" onclick="clicked()" id="dropdown">
-        <div>
-            <button class="nav-toggle rounded-lg z-10">
-                <x-dropdown-svg />
-            </button>
-        </div>
-
-        <x-dropdown :categories="$categories" />
-
-    </div>
-
     <div class="sm:relative inset-0 hidden sm:inline">
-        <x-button href="{{ route('portfolio') }}" onmouseover="showCategories()" onmouseout="hideCategories()">
+        <x-button href="{{ route('portfolio') }}">
             Portfolio
         </x-button>
-
-        <div id="categories" class="hidden absolute bg-black text-white w-28 py-2 mt-1 z-10"
-            onmouseover="showCategories()" onmouseout="hideCategories()">
-            @foreach ($categories as $category)
-            <x-button href="{{ route('categories.show', ['category' => $category->slug]) }}"
-                class="block hover:border-l-4" :withoutClasses="['hover:border-t-2', 'text-lg']">
-                {{ ($category->name) }}
-            </x-button>
-            @endforeach
-        </div>
         <x-button href="/">About</x-button>
     </div>
 </nav>

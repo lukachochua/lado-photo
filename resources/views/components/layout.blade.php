@@ -20,7 +20,7 @@
 <body class="bg-gray-100">
   <header class="bg-black text-white">
 
-    <x-navbar :categories="$categories" />
+    <x-navbar/>
 
     <main>
       <div class="bg-white min-h-screen pt-10 pb-6 overflow-hidden font-custom">

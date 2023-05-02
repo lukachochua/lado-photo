@@ -8,22 +8,6 @@
             @method('PATCH')
 
             <div class="mb-6">
-                <label class="block text-gray-700 font-bold mb-2" for="category">
-                    Choose Category
-                </label>
-                <select
-                    class="block appearance-none bg-gray-200 border border-gray-200 hover:border-gray-300 focus:border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none"
-                    id="category" name="category_id" value="{{ old('category') }}" type="file">
-                    <option value="" disabled selected>Select a category</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-                @error('category')
-                <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-            <div class="mb-6">
                 <label class="block text-gray-700 font-bold mb-2" for="description">
                     Photo description
                 </label>

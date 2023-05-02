@@ -19,7 +19,6 @@ class PostFactory extends Factory
         return [
             'description' => fake()->sentence,
             'photo' => fake()->image(public_path('storage/images'), 640, 480, null, false),
-            'category_id' => fake()->numberBetween(1,3),
             'user_id' => 1
         ];
     }
