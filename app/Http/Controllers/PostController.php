@@ -10,13 +10,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::inRandomOrder()->get()->map(function ($post) {
-            $image = Image::make(storage_path('app/public/images/' . $post->photo));
-            $post->aspectRatio = $image->getWidth() / $image->getHeight();
-            return $post;
-        })->filter(function ($post) {
-            return $post->aspectRatio > 1;
-        });;
+        $posts = Post::inRandomOrder()
+            ->get()
+            ->filter(function ($post) {
+                $image = Image::make(storage_path('app/public/images/' . $post->photo));
+                $aspectRatio = $image->width() / $image->height();
+                return $aspectRatio > 1;
+            })
+            ->take(3);
 
         return view('about', [
             'posts' => $posts,
@@ -30,13 +31,13 @@ class PostController extends Controller
             $post->aspectRatio = $image->getWidth() / $image->getHeight();
             return $post;
         });
-        
 
-        $verticalPosts = $posts->filter(function($post) {
+
+        $verticalPosts = $posts->filter(function ($post) {
             return $post->aspectRatio < 1;
         });
 
-        $horizontalPosts = $posts->filter(function($post) {
+        $horizontalPosts = $posts->filter(function ($post) {
             return $post->aspectRatio > 1;
         });
 
@@ -44,7 +45,7 @@ class PostController extends Controller
         $totalChunks = count($chunkedVerticalPosts) + count($horizontalPosts);
         $chunkIndexes = collect(range(0, $totalChunks - 1))->shuffle();
 
-        
+
         return view('portfolio', [
             'posts' => $posts,
             'verticalPosts' => $verticalPosts,
