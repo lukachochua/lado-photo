@@ -541,9 +541,9 @@ video {
   margin-left: -1rem;
   margin-right: -1rem;
 }
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -619,13 +619,22 @@ video {
   width: 50%;
 }
 .w-200 {
-  width: 120vh;
+  width: 129vh;
 }
 .w-96 {
   width: 24rem;
 }
 .w-full {
   width: 100%;
+}
+.w-100 {
+  width: 105vh;
+}
+.w-auto {
+  width: auto;
+}
+.w-4\/5 {
+  width: 80%;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -646,6 +655,9 @@ video {
 }
 .resize-none {
   resize: none;
+}
+.scroll-pr-2 {
+  scroll-padding-right: 0.5rem;
 }
 .appearance-none {
   -webkit-appearance: none;
@@ -765,9 +777,6 @@ video {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-.bg-transparent {
-  background-color: transparent;
 }
 .object-contain {
   -o-object-fit: contain;
@@ -936,11 +945,6 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1024,10 +1028,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1050,11 +1050,23 @@ video {
   }
 
   .sm\:w-100 {
-    width: 97vh;
+    width: 105vh;
   }
 
   .sm\:w-2\/5 {
     width: 40%;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:w-4\/5 {
+    width: 80%;
+  }
+
+  .sm\:w-200 {
+    width: 129vh;
   }
 
   .sm\:px-6 {
