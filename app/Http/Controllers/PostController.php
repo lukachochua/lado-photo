@@ -40,20 +40,10 @@ class PostController extends Controller
             return $post->aspectRatio > 1;
         });
 
-        $chunkedVerticalPosts = $verticalPosts->chunk(2);
-        $totalChunks = count($chunkedVerticalPosts) + count($horizontalPosts);
-        $chunkIndexes = collect(range(0, $totalChunks - 1))->shuffle();
-
-        $hasDisplayedHorizontalPosts = false; 
-
         return view('portfolio', [
             'posts' => $posts,
             'verticalPosts' => $verticalPosts,
             'horizontalPosts' => $horizontalPosts,
-            'chunkedVerticalPosts' => $chunkedVerticalPosts,
-            'totalChunks' => $totalChunks,
-            'chunkIndexes' => $chunkIndexes,
-            'hasDisplayedHorizontalPosts' => $hasDisplayedHorizontalPosts
         ]);
     }
 }
