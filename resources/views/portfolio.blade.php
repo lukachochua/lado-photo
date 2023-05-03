@@ -8,12 +8,15 @@
                     @endforeach
                 </div>
             @else
-            @foreach ($horizontalPosts as $post)
-                <div class="flex mb-4">
-                        <img src="{{ asset("storage/images/{$post->photo}") }}" class="sm:w-200 shadow-xl object-cover rounded-lg mx-auto">
-                </div>
-            @endforeach
+                @if (!$hasDisplayedHorizontalPosts) 
+                    @foreach ($horizontalPosts as $post)
+                        <div class="flex mb-4">
+                            <img src="{{ asset("storage/images/{$post->photo}") }}" class="sm:w-200 shadow-xl object-cover rounded-lg mx-auto">
+                        </div>
+                    @endforeach
+                    @php $hasDisplayedHorizontalPosts = true; @endphp
+                @endif
             @endif
         @endforeach
     </div>
-</x-layout>             
+</x-layout>
