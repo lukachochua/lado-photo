@@ -1,4 +1,4 @@
-<nav class="flex justify-between items-center py-4 px-6 font-sans">
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-6 font-sans bg-transparen transition-colors duration-500">
     <div>
         <a href="{{ route('home') }}"
             class="sm:inline py-2 px-4 text-white font-bold hover:text-white hover:border-t-2 border-white relative transition duration-400 ease-in-out text-lg font-custom">
