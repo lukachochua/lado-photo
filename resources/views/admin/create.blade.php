@@ -12,7 +12,7 @@
                 <div class="relative">
                     <input
                         class="block appearance-none bg-gray-200 border border-gray-200 hover:border-gray-300 focus:border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none"
-                        id="photo" name="photo" value="{{ old('photo') }}" type="file" accept="image/*">
+                        id="photo" name="photo" value="{{ old('photo') }}" type="file" accept="image/*" multiple>
                     <div class="absolute inset-y-0 right-0 flex items-center">
                         <span class="bg-gray-300 text-gray-600 px-2 py-1 rounded-l-none rounded-r-md">JPEG, PNG,
                             JPG</span>

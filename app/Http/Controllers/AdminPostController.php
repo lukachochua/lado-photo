@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
@@ -31,19 +31,19 @@ class AdminPostController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $post = new Post();
-        
+
         $attributes = $this->validatePost();
-            
-        
+
+
         $path = $attributes['photo']->store('public/images');
         $post->photo = basename($path);
         $post->user_id = auth()->user()->id;
         $post->description = $attributes['description'];
-
         $post->save();
+
 
         return redirect('/admin/posts/create')->with('success', 'Post created successfully!');
     }
@@ -74,7 +74,7 @@ class AdminPostController extends Controller
         return redirect(route('posts.show', $post))->with('success', 'Post deleted successfully!');
     }
 
-    protected function validatePost(?Post $post=null)
+    protected function validatePost(?Post $post = null)
     {
         $post ??= new Post;
 
