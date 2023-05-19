@@ -6,7 +6,7 @@
         <div class="inline-block bg-black rounded-tl-xl rounded-br-xl hover:underline transition ease-in duration-500
       ">
             <h1 class="text-4xl font-bold text-gray-400 text-center leading-tight p-4 select-none">
-                <span class="text-white"> Nevermore Agency </span>
+                <span class="text-white"> Dom Crow </span>
             </h1>
         </div>
     </div>
