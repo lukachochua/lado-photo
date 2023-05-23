@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Nevermore Agency</title>
+  <title>Dom Crow</title>
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-gray-100">
-  <header class="bg-black text-white">
+  <header class="text-white bg-black">
 
     <x-navbar />
 
