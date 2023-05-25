@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Slider;
 use Intervention\Image\Facades\Image;
 
 
@@ -10,17 +11,17 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::inRandomOrder()
-            ->get()
-            ->filter(function ($post) {
-                $image = Image::make(storage_path('app/public/images/' . $post->photo));
+        $sliders = Slider::inRandomOrder()
+            ->get() 
+            ->filter(function ($slider) {
+                $image = Image::make(storage_path('app/public/slider/' . $slider->photo));
                 $aspectRatio = $image->width() / $image->height();
                 return $aspectRatio > 1;
             })
             ->take(3);
 
         return view('about', [
-            'posts' => $posts,
+            'sliders' => $sliders,
         ]);
     }
 

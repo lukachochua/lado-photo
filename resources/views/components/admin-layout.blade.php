@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Doms Admin Panel</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -18,8 +18,7 @@
 
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="{{ route('admin')}}"
-                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Dashboard</a>
+
                                 @guest
                                 <a href="{{ route('login')}}"
                                     class="px-3 py-2 text-sm font-medium text-green-500 rounded-md hover:bg-green-500 hover:text-white">Log
@@ -29,11 +28,19 @@
                                 @auth
                                 <a href="{{ route('posts.create')}}"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Create
-                                    Post</a>
-                                    
+                                    Photo</a>
+
                                 <a href="/admin/posts/gallery"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Photo
                                     Gallery</a>
+
+                                <a href="{{ route('admin.slider') }}"
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Create
+                                    Slider</a>
+
+                                <a href="{{ route('admin.slidergallery')}}"
+                                    class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700">Slider
+                                    Photos</a>
                                 <form action="{{ route('logout')}}" method="POST"
                                     class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-red-700">
                                     @csrf

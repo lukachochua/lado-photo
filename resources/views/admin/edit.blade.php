@@ -1,7 +1,7 @@
 <x-admin-layout :post="$post" >
     <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full mx-auto md:max-w-md">
         <div class="bg-green-500 py-4 px-6">
-            <h2 class="text-2xl font-bold text-white">Upload Photo</h2>
+            <h2 class="text-2xl font-bold text-white">Edit Photo</h2>
         </div>
         <form class="px-6 py-8" method="POST" action="{{ route('posts.update', $post) }}" enctype="multipart/form-data">
             @csrf
@@ -21,7 +21,7 @@
             <div class="flex items-center justify-center">
                 <button
                     class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full shadow-lg focus:outline-none focus:shadow-outline">
-                    Upload
+                    Update
                 </button>
             </div>
         </form>

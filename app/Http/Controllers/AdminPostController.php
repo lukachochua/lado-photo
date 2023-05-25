@@ -48,6 +48,8 @@ class AdminPostController extends Controller
         return redirect('/admin/posts/create')->with('success', 'Post created successfully!');
     }
 
+    
+
     public function edit(Post $post)
     {
 

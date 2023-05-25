@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slider :posts="$posts"/>
+    <x-slider :sliders="$sliders"/>
 
 
     <div class="flex justify-center">

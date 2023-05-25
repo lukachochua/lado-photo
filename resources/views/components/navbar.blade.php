@@ -10,6 +10,6 @@
         <x-button href="{{ route('portfolio') }}">
             Portfolio
         </x-button>
-        <x-button href="/">About</x-button>
+        <x-button href="/">Me</x-button>
     </div>
 </nav>
