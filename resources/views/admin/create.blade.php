@@ -1,6 +1,7 @@
 <x-admin-layout>
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden w-full mx-auto md:max-w-md">
-        <div class="bg-green-500 py-4 px-6">
+    <div class="flex justify-center">
+    <div class="bg-white ml-20 sm:ml-48 shadow-lg rounded-lg overflow-hidden max-w-md ">
+        <div class="bg-orange-400 py-4 px-6">
             <h2 class="text-2xl font-bold text-white">Upload Photo</h2>
         </div>
         <form class="px-6 py-8" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
@@ -35,10 +36,11 @@
             </div>
             <div class="flex items-center justify-center">
                 <button
-                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full shadow-lg focus:outline-none focus:shadow-outline">
+                    class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-full shadow-lg focus:outline-none focus:shadow-outline">
                     Upload
                 </button>
             </div>
         </form>
+    </div>
     </div>
 </x-admin-layout>
