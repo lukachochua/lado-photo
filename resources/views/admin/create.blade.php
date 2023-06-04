@@ -2,13 +2,13 @@
     <div class="flex justify-center">
     <div class="bg-white ml-20 sm:ml-48 shadow-lg rounded-lg overflow-hidden max-w-md ">
         <div class="bg-orange-400 py-4 px-6">
-            <h2 class="text-2xl font-bold text-white">Upload Photo</h2>
+            <h2 class="text-2xl font-bold text-white">Upload Slider Image</h2>
         </div>
         <form class="px-6 py-8" method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
                 <label class="block text-gray-700 font-bold mb-2" for="photo">
-                    Upload photo
+                    Upload image
                 </label>
                 <div class="relative">
                     <input
@@ -21,6 +21,21 @@
                 </div>
                 @error('photo')
                 <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 font-bold mb-2" for="category">
+                    Select Category
+                </label>
+                <div class="relative">
+                    <select name="category_id" id="category">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('category_id')
+                    <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
