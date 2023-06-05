@@ -1,12 +1,11 @@
-<x-layout>
+<x-layout :categories="$categories">
     <x-slider :sliders="$sliders" />
-
 
     <div class="flex justify-center">
         <div class="inline-block bg-black rounded-tl-xl rounded-br-xl hover:underline transition ease-in duration-500
       ">
             <h1 class="text-4xl font-bold text-gray-400 text-center leading-tight p-4 select-none">
-                <span class="text-white"> Dom Crow </span>
+                <span class="text-white">Hey, I'm Dom</span>
             </h1>
         </div>
     </div>
@@ -25,7 +24,6 @@
                 out with friends or my English Bull Terrier Grimmjaw.
                 I'm very much a kid at heart, I believe in good, I love to socialize, meeting new people and travel
                 whenever I can. So feel free to say hello and share a story with me.
-
             </h1>
         </div>
     </div>

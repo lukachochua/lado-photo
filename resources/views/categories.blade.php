@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :categories="$categories">
     <div class="flex justify-center items-center">
         <div class="flex flex-wrap justify-center w-200">
             @foreach ($posts as $post)

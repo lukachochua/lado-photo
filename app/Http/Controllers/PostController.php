@@ -21,9 +21,11 @@ class PostController extends Controller
             })
             ->take(3);
 
+        $categories = Category::all();
+
         return view('about', [
             'sliders' => $sliders,
-        ]);
+        ])->with('categories', $categories);
     }
 
     public function portfolio()
@@ -31,7 +33,7 @@ class PostController extends Controller
         $categories = Category::with('posts')->get();
 
         $filteredPosts = collect([]);
-        
+
         foreach ($categories as $category) {
             $post = $category->posts->first(function ($post) {
                 $image = Image::make(storage_path('app/public/images/' . $post->photo));
@@ -58,6 +60,8 @@ class PostController extends Controller
             return $post;
         });
 
-        return view('categories', compact('posts'));
+        $categories = Category::all();
+
+        return view('categories', compact('posts'))->with('categories', $categories);
     }
 }
