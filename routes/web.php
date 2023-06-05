@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PostController::class, 'index'])->name('home');
-Route::get('/portfolio', [PostController::class, 'portfolio'])->name('portfolio');
 Route::get('/portfolio/category/{category}', [PostController::class, 'show'])->name('categories');
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');

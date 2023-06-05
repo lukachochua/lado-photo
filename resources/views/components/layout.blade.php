@@ -35,7 +35,6 @@
   <x-footer />
 
   <script type="module" src={{ asset('js/slideshow.js')}}></script>
-
 </body>
 
 </html>

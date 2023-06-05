@@ -9,7 +9,7 @@
             <x-button href="#" @click.prevent="open = !open">
                 Portfolio
             </x-button>
-            <div class="absolute top-full sm:right-0 right-8 mt-2 ml-4 rounded-md shadow-lg bg-cyan-200"
+            <div class="absolute top-full sm:right-0 right-8 mt-2 ml-4 rounded-md shadow-lg bg-black"
                  x-show="open"
                  x-transition:enter="transition ease-out duration-300"
                  x-transition:enter-start="opacity-0 transform scale-90"
@@ -21,7 +21,7 @@
                  x-cloak>
                 @foreach ($categories as $category)
                     <a href="{{ route('categories', ['category' => $category->id]) }}" class="block px-4 py-2">
-                        <h1 class="text-black text-center hover:text-orange-400 text-sm font-bold">{{ $category->name }}</h1>
+                        <h1 class="text-white text-center hover:text-orange-400 text-sm font-bold">{{ $category->name }}</h1>
                     </a>
                 @endforeach
             </div>

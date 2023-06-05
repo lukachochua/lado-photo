@@ -3,9 +3,9 @@
 
   <div class="flex justify-center items-center flex-grow sm:text-lg text-xs">
     <div class="text-center">
-      <a href="mailto:hey@domcrow.space" class="underline sm:text-lg text-xs">Contact at hey@domcrow.space</a>
+      <a href="mailto:hey@domcrow.space" class="underline sm:text-lg text-xs">Mail: hey@domcrow.space</a>
       <span>|</span>
-      <a href="tel:+9955992855800" class="underline">Phone: +9955992855800</a>
+      <a href="tel:+9955992855800" class="underline">Phone: +995 599 285 800</a>
     </div>
   </div>
 
